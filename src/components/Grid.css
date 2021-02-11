@@ -1,0 +1,22 @@
+.container {
+	background-color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.app {
+	background-color: darkturquoise;
+}
+.row {
+	display: flex;
+	height: 100px;
+}
+
+.outer {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}

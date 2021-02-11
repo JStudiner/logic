@@ -1,0 +1,129 @@
+.wrap {
+	background-color: darkturquoise;
+	display: flex;
+	flex-direction: row;
+	outline: 1px solid grey;
+	height: 200px;
+	margin-top: 25px;
+
+	width: 75%;
+}
+.codestack {
+	height: 100%;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	border-right: 1px solid grey;
+}
+.codebox {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-bottom: 1px solid grey;
+	flex: 1;
+}
+.pic {
+	color: aliceblue;
+}
+.displaystack {
+	flex: 4;
+	display: flex;
+	flex-direction: column;
+}
+.display-box {
+	display: flex;
+	flex-direction: row;
+	flex: 1;
+	border-bottom: 1px solid grey;
+}
+.function-box {
+	flex: 1;
+	background-color: aliceblue;
+	border: 1px solid grey;
+}
+.arrows-box {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	flex: 1;
+}
+.function-box-drag {
+	background-color: dark turquoise;
+	border: 1px solid grey;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+	color: aliceblue;
+}
+.function-box-drag-open {
+	background-color: aliceblue;
+	border: 1px solid grey;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+	color: aliceblue;
+}
+.function-box-drag-open:hover {
+	background-color: aliceblue;
+	border: 1px solid grey;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+	color: aliceblue;
+	cursor: crosshair;
+}
+.function-box-drag:hover {
+	border: 1px solid grey;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+	color: aliceblue;
+	cursor: crosshair;
+}
+.arrow1 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+	color: aliceblue;
+}
+.arrow1:hover {
+	cursor: grab;
+}
+.controlstack {
+	border-left: 1px solid grey;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+.go {
+	border: 3px solid grey;
+	background-color: rgb(41, 155, 41);
+	color: aliceblue;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex: 1;
+}
+.go:hover {
+	background-color: rgb(19, 224, 47);
+	cursor: grab;
+}
+.reset:hover {
+	background-color: rgb(247, 71, 71);
+	cursor: grab;
+}
+.reset {
+	border: 3px solid grey;
+	background-color: red;
+	color: aliceblue;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex: 1;
+}
