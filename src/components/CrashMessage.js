@@ -8,17 +8,15 @@ class CrashMessage extends React.Component {
 	sleep = (time) => {
 		return new Promise((resolve) => setTimeout(resolve, time));
 	};
-	async handleRestart() {
+	handleRestart = async () => {
 		await this.sleep(500);
 		this.props.restart();
-	}
+	};
 	renderButton() {
 		return (
 			<>
 				<button
-					onClick={() => {
-						this.props.handleRestart();
-					}}
+					onClick={() => this.handleRestart()}
 					className="ui button negative">
 					Restart
 				</button>
