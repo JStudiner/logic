@@ -12,7 +12,7 @@ allows you to change the arrow commands and order.
 
 ### Try it here
 
-[Link to Game!](https://facebook.github.io/create-react-app/docs/running-tests)
+[Link to Game!](https://stupefied-ramanujan-f31779.netlify.app/)
 
 ### Future updates
 
