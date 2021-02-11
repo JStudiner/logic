@@ -12,3 +12,13 @@
 	height: 50px;
 	position: relative;
 }
+.crash-message {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+}
+.explosion {
+	height: 50px;
+	width: 50px;
+}

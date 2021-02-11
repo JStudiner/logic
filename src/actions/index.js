@@ -45,3 +45,6 @@ export const drop = (value, id) => {
 		value,
 	};
 };
+export const restart = () => {
+	return { type: 'RESTART' };
+};

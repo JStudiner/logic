@@ -1,12 +1,16 @@
-import { bindActionCreators, combineReducers } from 'redux';
-
-const initialState = { grid: [], rocketLoc: { x: 0, y: 0 }, cols: 0, rows: 0 };
+let initialState = {
+	grid: [],
+	rocketLoc: { x: 0, y: 0 },
+	cols: 0,
+	rows: 0,
+	crashed: false,
+	home: false,
+};
 
 const gridReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case 'MOVE':
 			console.log(action.payload);
-			const move = action.payload[0];
 			const rx = state.rocketLoc.x;
 			const ry = state.rocketLoc.y;
 			const rows = state.rows;
@@ -20,7 +24,9 @@ const gridReducer = (state = initialState, action) => {
 					if (ry === rows - 1) {
 						console.log("can't move");
 					} else if (grid[ry + 1][rx].value === 2) {
-						console.log('crashed');
+						return { ...state, crashed: true };
+					} else if (grid[ry + 1][rx].value === 3) {
+						return { ...state, home: true };
 					} else {
 						state = {
 							...state,
@@ -53,7 +59,9 @@ const gridReducer = (state = initialState, action) => {
 					if (ry === 0) {
 						console.log("can't move");
 					} else if (grid[ry - 1][rx].value === 2) {
-						console.log('crashed');
+						return { ...state, crashed: true };
+					} else if (grid[ry - 1][rx].value === 3) {
+						return { ...state, home: true };
 					} else {
 						state = {
 							...state,
@@ -86,7 +94,9 @@ const gridReducer = (state = initialState, action) => {
 					if (rx === 0) {
 						console.log("can't move");
 					} else if (grid[ry][rx - 1].value === 2) {
-						console.log('crashed');
+						return { ...state, crashed: true };
+					} else if (grid[ry][rx - 1].value === 3) {
+						return { ...state, home: true };
 					} else {
 						state = {
 							...state,
@@ -114,7 +124,9 @@ const gridReducer = (state = initialState, action) => {
 					if (rx === cols - 1) {
 						console.log("can't move");
 					} else if (grid[ry][rx + 1].value === 2) {
-						console.log('crashed');
+						return { ...state, crashed: true };
+					} else if (grid[ry][rx + 1].value === 3) {
+						return { ...state, home: true };
 					} else {
 						state = {
 							...state,
@@ -143,13 +155,17 @@ const gridReducer = (state = initialState, action) => {
 			}
 
 			return state;
+		case 'RESTART':
+			return initialState;
 		case 'INITIAL':
-			return {
+			state = {
 				...state,
 				grid: action.grid,
 				cols: action.cols,
 				rows: action.rows,
 			};
+			initialState = state;
+			return state;
 		case 'CHANGE':
 			const { wow, x, y } = action.payload;
 			return {
@@ -172,12 +188,3 @@ const gridReducer = (state = initialState, action) => {
 	}
 };
 export default gridReducer;
-/*
-let { x, y } = action.payload;
-const newObj = { type: 0 };
-return [
-    ...state.slice(0, x),
-    { ...state[x], newObj },
-    ...state.slice(x + 1),
-];
-*/

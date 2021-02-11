@@ -17,6 +17,7 @@ class CommandBay extends React.Component {
 		return new Promise((resolve) => setTimeout(resolve, time));
 	};
 	async handleGo() {
+		await this.sleep(500);
 		for (let i = 0; i < 4; i++) {
 			this.props.move(this.props.code[i]);
 			await this.sleep(500);

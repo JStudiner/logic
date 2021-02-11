@@ -4,7 +4,8 @@ import './Box.css';
 import './Grid.css';
 import { connect } from 'react-redux';
 import { createGrid, changeType } from '../actions';
-
+import CrashMessage from './CrashMessage';
+import SuccessMessage from './SuccessMessage';
 class Grid extends React.Component {
 	handleResize = () => {
 		if (this.props.active === false) {
@@ -35,6 +36,12 @@ class Grid extends React.Component {
 	}
 
 	render() {
+		if (this.props.crashed === true) {
+			return <CrashMessage />;
+		}
+		if (this.props.home === true) {
+			return <SuccessMessage />;
+		}
 		console.log(this.props.grid);
 		return (
 			<div className="container" onKeyDown={this.handleKeyPress}>
@@ -58,6 +65,8 @@ class Grid extends React.Component {
 }
 const mapStateToProps = (state) => {
 	return {
+		home: state.map.home,
+		crashed: state.map.crashed,
 		grid: state.map.grid,
 		rx: state.map.rocketLoc.x,
 		ry: state.map.rocketLoc.y,
