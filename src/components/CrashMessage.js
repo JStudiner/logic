@@ -29,7 +29,7 @@ class CrashMessage extends React.Component {
 		return (
 			<div className="crash-message">
 				<img className="explosion" alt="!" src={explosion}></img>
-				<p1>Press the Reset Button to Try Again!</p1>
+				<p>Press the Reset Button to Try Again!</p>
 			</div>
 		);
 	}

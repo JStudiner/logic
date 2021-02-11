@@ -13,7 +13,6 @@ class CommandBay extends React.Component {
 		}
 	}
 	sleep = (time) => {
-		console.log('sleeping');
 		return new Promise((resolve) => setTimeout(resolve, time));
 	};
 	async handleGo() {

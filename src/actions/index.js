@@ -18,7 +18,6 @@ export const changeType = (wow, x, y) => {
 	};
 };
 export const pickup = (value) => {
-	console.log('wow');
 	return {
 		type: 'PICKUP',
 		payload: value,

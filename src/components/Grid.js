@@ -42,7 +42,7 @@ class Grid extends React.Component {
 		if (this.props.home === true) {
 			return <SuccessMessage />;
 		}
-		console.log(this.props.grid);
+
 		return (
 			<div className="container" onKeyDown={this.handleKeyPress}>
 				<div className="grid">

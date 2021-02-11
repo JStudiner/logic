@@ -10,7 +10,6 @@ let initialState = {
 const gridReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case 'MOVE':
-			console.log(action.payload);
 			const rx = state.rocketLoc.x;
 			const ry = state.rocketLoc.y;
 			const rows = state.rows;
@@ -22,7 +21,6 @@ const gridReducer = (state = initialState, action) => {
 					break;
 				case 1:
 					if (ry === rows - 1) {
-						console.log("can't move");
 					} else if (grid[ry + 1][rx].value === 2) {
 						return { ...state, crashed: true };
 					} else if (grid[ry + 1][rx].value === 3) {
@@ -57,7 +55,6 @@ const gridReducer = (state = initialState, action) => {
 					break;
 				case 2:
 					if (ry === 0) {
-						console.log("can't move");
 					} else if (grid[ry - 1][rx].value === 2) {
 						return { ...state, crashed: true };
 					} else if (grid[ry - 1][rx].value === 3) {
@@ -92,7 +89,6 @@ const gridReducer = (state = initialState, action) => {
 					break;
 				case 3:
 					if (rx === 0) {
-						console.log("can't move");
 					} else if (grid[ry][rx - 1].value === 2) {
 						return { ...state, crashed: true };
 					} else if (grid[ry][rx - 1].value === 3) {
@@ -122,7 +118,6 @@ const gridReducer = (state = initialState, action) => {
 					break;
 				case 4:
 					if (rx === cols - 1) {
-						console.log("can't move");
 					} else if (grid[ry][rx + 1].value === 2) {
 						return { ...state, crashed: true };
 					} else if (grid[ry][rx + 1].value === 3) {

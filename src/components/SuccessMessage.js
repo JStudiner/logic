@@ -22,7 +22,7 @@ class SuccessMessage extends React.Component {
 		return (
 			<div className="crash-message">
 				<img className="explosion" alt="!" src={rocketLanding}></img>
-				<p1>Press the Reset To Try a Different Path!</p1>
+				<p>Press the Reset To Try a Different Path!</p>
 			</div>
 		);
 	}
